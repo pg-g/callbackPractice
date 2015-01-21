@@ -98,11 +98,15 @@ contains(names, 'Colt', function(result){
     //Code Here for uniq
 var uniq = function(str, callback) {
   for (var i = 0; i < str.length; i++) {
-    if (str[i] === ) {
-      str.splice(str[i], 1);
-      str.splice(str[i], 1);
+    var test = str[i];
+    var testIndex = i;
+    for (var x = 0; x < str.length; x++) {
+      if (test === str[x] && testIndex !== x) {
+        str.splice(str[x], 1);
+      } 
     }
   }
+  callback(str);
 }
 //
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
